@@ -64,7 +64,7 @@ function UpdateAddress()
 
 function ChangeResult(output)
 {
-    if (output == 0)
+    if (output == 1)
     {
         document.getElementById("result").innerHTML = "The shipping address was updated."
     }
