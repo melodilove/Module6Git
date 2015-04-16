@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Module 6 Assignment</title>
+    <link rel="stylesheet" type="text/css" href="styles/Assignment6.css" />
+    <script src="js/Assignment6.js"></script>
+</head>
+
+<body>
+    <h1>Module 6 Assignment</h1>
+    <hr>
+    <section id="addcust">
+        <label>Please enter a Customer ID:</label>
+        <input type="text" id="customerid">
+        <label class="idformat">The Customer ID should be 5 uppercase text characters.</label>
+        <br>
+        <label>Please enter the Customer's Name:</label>
+        <input type="text" id="customername">
+        <br>
+        <label>Please enter the Customer's City:</label>
+        <input type="text" id="customercity">
+        <br>
+        <button onclick="CreateCustomer()" id="newcustomer">Add a New Customer</button>
+        <br>
+        <hr>
+        <label id="display">The result of your request will be displayed here.</label>
+    </section>
+    
+    <section id="changecustomer">
+        <label>Please enter the Order Number:</label>
+        <input type="text" id="ordernumber">
+        <br>
+        <label>Please enter the Ship-to Name:</label>
+        <input type="text" id="shipname">
+        <br>
+        <label>Please enter the Ship-to Street:</label>
+        <input type="text" id="shipstreet">
+        <br>
+        <label>Please enter the Ship-to City:</label>
+        <input type="text" id="shipcity">
+        <br>
+        <label>Please enter the Ship-to Postal Code:</label>
+        <input type="text" id="shippostalcode">
+        <br>
+        <button onclick="UpdateAddress()" id="address">Update Shipping Address</button>
+        <br>
+        <hr>
+        <label id="result">The result of your request will be displayed here.</label>
+        
+        
+    </section>
+    <section id="deletecustomer">
+       
+        
+        
+    </section>
+   
+
+
+</body>
+</html>
