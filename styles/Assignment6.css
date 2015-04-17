@@ -2,8 +2,8 @@
 #changecustomer {background-color: #C0C0C0; position: absolute; top: 111px; visibility: hidden; width: 580px; color: #000000; padding: 10px;}
 #deletecustomer {background-color: #000000; position: absolute; top: 111px; visibility: hidden; width: 580px; color: #FFFFFF; padding: 10px;}
 
-.content-area {width:600px;}
-#menu {width: 600px;}
+.content-area {max-width:600px;}
+#menu {max-width: 600px;}
 #customerid {margin-left: 40px;}
 #customercity {margin-left: 10px;}
 .idformat{font-weight: bold; font-style: italic;}
