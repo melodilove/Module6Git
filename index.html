@@ -8,18 +8,29 @@
 </head>
 
 <body>
+    <div class="content-area">
     <h1>Module 6 Assignment</h1>
     <hr>
+    
+    <select onchange="MenuChoice()" id="menu">
+        <option>Please choose an option to display.</option>
+        <option>Add Customer</option>
+        <option>Update Shipping Address</option>
+        <option>Delete Customer</option>
+    </select>
     <section id="addcust">
         <label>Please enter a Customer ID:</label>
-        <input type="text" id="customerid">
-        <label class="idformat">The Customer ID should be 5 uppercase text characters.</label>
+        <input type="text" id="customerid"><br>
+        <label class="idformat">**The Customer ID should be 5 uppercase text characters.**</label>
+        <br>
         <br>
         <label>Please enter the Customer's Name:</label>
         <input type="text" id="customername">
         <br>
+        <br>
         <label>Please enter the Customer's City:</label>
         <input type="text" id="customercity">
+        <br>
         <br>
         <button onclick="CreateCustomer()" id="newcustomer">Add a New Customer</button>
         <br>
@@ -47,16 +58,17 @@
         <br>
         <hr>
         <label id="result">The result of your request will be displayed here.</label>
-        
-        
     </section>
+    
     <section id="deletecustomer">
-       
-        
-        
+        <label>Please enter the Customer ID that you would like to delete.</label>
+        <input type="text" id="cid">
+        <br>
+        <button onclick="ConfirmDelete()" id="address">Delete Customer</button>
+        <br>
+        <hr>
+        <label id="delresult">The result of your request will be displayed here.</label>
     </section>
-   
-
-
+    </div>
 </body>
 </html>

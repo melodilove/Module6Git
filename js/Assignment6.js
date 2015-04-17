@@ -1,3 +1,31 @@
+function MenuChoice()
+{
+    if (document.getElementById("menu").value == "Add Customer")
+    {
+        document.getElementById("addcust").style.visibility = "visible";
+        document.getElementById("changecustomer").style.visibility = "hidden";
+        document.getElementById("deletecustomer").style.visibility = "hidden";
+    }
+    else if (document.getElementById("menu").value == "Update Shipping Address")
+    {
+        document.getElementById("addcust").style.visibility = "hidden";
+        document.getElementById("changecustomer").style.visibility = "visible";
+        document.getElementById("deletecustomer").style.visibility = "hidden";
+    }
+    else if (document.getElementById("menu").value == "Delete Customer")
+    {
+        document.getElementById("addcust").style.visibility = "hidden";
+        document.getElementById("changecustomer").style.visibility = "hidden";
+        document.getElementById("deletecustomer").style.visibility = "visible";
+    }
+    else
+   {
+        document.getElementById("addcust").style.visibility = "hidden";
+        document.getElementById("changecustomer").style.visibility = "hidden";
+        document.getElementById("deletecustomer").style.visibility = "hidden";
+   }
+}
+
 function CreateCustomer()
 {
     var objRequest = new XMLHttpRequest();
@@ -80,5 +108,46 @@ function ChangeResult(output)
     {
         document.getElementById("result").innerHTML = "The shipping address could not be updated because a record with supplied Order ID could not be found." + "<br>" + output.Exception;
     }
+}
+
+function ConfirmDelete()
+{
+    var msg;
+    msg= "Are you sure you want to delete the data ?";
+    var agree=confirm(msg);
+    if (agree)
+    {
+        DeleteCustomer() ;
+    }
+}
+
+function DeleteCustomer()
+{
+    var objRequest = new XMLHttpRequest();
+    var url = "http://bus-pluto.ad.uab.edu/jsonwebservice/service1.svc/deleteCustomer/";
+    url += document.getElementById("cid").value;
+
+    
+    objRequest.onreadystatechange = function()
+    {
+        if (objRequest.readyState == 4 && objRequest.status == 200)
+        {
+            var result = JSON.parse(objRequest.responseText);
+            DeleteResult(result);
+        }
+    }
+    objRequest.open("GET",url,true);
+    objRequest.send();
+}
    
+function DeleteResult(output)
+{
+    if (output.DeleteCustomerResult.WasSuccessful == 1)
+    {
+        document.getElementById("delresult").innerHTML = "The customer has been deleted."
+    }
+    else
+    {
+        document.getElementById("delresult").innerHTML = "The customer could not be deleted." + "<br>" + output.Exception;
+    }
 }
